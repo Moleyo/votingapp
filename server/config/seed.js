@@ -52,17 +52,18 @@ User.find({}).remove(function() {
 Polls.find({}).remove(function(){
   Polls.create({
     //poll1
-    question: 'Will this work?',
-    answers: ['I really hope so!', 'Its possible!', 'Nah Blud!'],
-    results: [2, 3, 5],
-    info: 'poll1',
-    createdBy: 'userID',
+    //poll2
+    question: 'Poll 1',
+    answers: ['Yes', 'No', 'Maybe'],
+    results: [10, 5, 7],
+    voted: [],
+    createdBy: 'test',
   }, {
     //poll2
     question: 'Poll 2',
     answers: ['Yes', 'No'],
     results: [10, 5],
-    info: 'poll2',
-    createdBy: 'userID',
+    voted: [],
+    createdBy: 'test',
   });
 });

@@ -4,41 +4,38 @@
   <div class="container">
     <h1>'Voting App!'</h1>
     <p class="lead">Create and vote on polls! It's questions, with answers, and charts!</p>
-    <a href="/signup"><button type="submit" class="btn btn-success btn-lg">Sign up</button></a>
+    <a href="/signup"><button ng-hide="isLoggedIn" type="submit" class="btn btn-success btn-lg">Sign up</button></a>
+    <a href="/login"><button ng-hide="isLoggedIn" type="submit" class="btn btn-primary btn-lg">Login</button></a>
+    <a ng-show="isLoggedIn" href='/newpoll'><button type="button" class="btn btn-warning btn-lg">New Poll!</button></a>
+    <a href='/allpoll'><button type="button" class="btn btn-success btn-lg">All polls!</button></a>
+    <a ng-show="isLoggedIn" href='/mypoll'><button type="button" class="btn btn-danger btn-lg">My polls!</button></a>
   </div>
 </header>
 
 <div class="container">
   <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
-      </ul>
-    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <i class="fa fa-television fa-4x"></i>
+      <h2>Create your own polls</h2>
+      <p>You have a question. You demand to know the answers of the people. This voting app allows you to ask said question and await said answers from said people.<p>
+    </div>      
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <i class="fa fa-rss fa-4x"></i>
+      <h2>Vote and view polls</h2>
+      <p>See polls other users have created, from your friends to any ole Joe from across the world.<p>
+    </div>      
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <i class="fa fa-coffee fa-4x"></i>
+      <h2>Drink Coffee?</h2>
+      <p>Feel free to have a cheeky cup of coffee whilst you peruse this site.<p>
+    </div>      
   </div>
-
-  <form class="thing-form">
-    <label>Syncs in realtime across clients</label>
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
-      </span>
-    </p>
-  </form>
 </div>
-
-<!-- new poll, all polls, all my polls -->
-<div style="margin:auto;text-align:center"><a href='/newpoll'><button type="submit" class="btn btn-primary btn-lg">Click me to make a new poll!</button></a></div>
-<div style="margin:auto;text-align:center"><a href='/allpoll'><button type="submit" class="btn btn-info btn-lg">Click me to see all the polls!</button></a></div>
-<div style="margin:auto;text-align:center"><a href='/mypoll'><button type="submit" class="btn btn-danger btn-lg">Click me to see just your polls!</button></a></div>
-
 
 <footer class="footer">
   <div class="container">
       <p>FreeCodeCamp BaseJump: Build a Voting App |
-        <a href="https://twitter.com/tyhenkel">@MAElliott90</a> |
+        <a href="https://twitter.com/MAElliott90">@MAElliott90</a> |
          <a href="https://github.com/Moleyo/votingapp">Github</a></p>
   </div>
 </footer>
