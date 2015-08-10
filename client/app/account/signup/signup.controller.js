@@ -1,14 +1,22 @@
 'use strict';
 
 angular.module('workspaceApp')
-  .controller('SignupCtrl', function ($scope, Auth, $location) {
+  .controller('SignupCtrl', function ($scope, Auth, $location, $http) {
     $scope.user = {};
     $scope.errors = {};
-
+    $scope.message = 'Please choose a name, providing us with an email and password.';
+      
     $scope.register = function(form) {
       $scope.submitted = true;
 
       if(form.$valid) {
+         for(var i = 0;i<$scope.currentUsers.length;i++){
+          if($scope.currentUsers[i].name === $scope.user.name){
+            $scope.message = $scope.user.name + ' is already taken as a user name, please choose another name!'
+            return;
+          }
+        }
+        
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
@@ -30,5 +38,10 @@ angular.module('workspaceApp')
         });
       }
     };
+
+      //get all usernames to check later
+      $http.get('/api/users').success(function(users) {
+        $scope.currentUsers = users;
+      });
 
   });

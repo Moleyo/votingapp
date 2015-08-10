@@ -53,16 +53,16 @@ Polls.find({}).remove(function(){
   Polls.create({
     //poll1
     //poll2
-    question: 'Poll 1',
-    answers: ['Yes', 'No', 'Maybe'],
+    question: 'What is the sound of one hand clapping',
+    answers: ['Like a normal clap, but quieter.', 'The same sound made by a tree falling in a forest with no-one around to hear it.', 'This question is unanswerable... Enlightenment achieved!'],
     results: [10, 5, 7],
     voted: [],
     createdBy: 'test',
   }, {
     //poll2
-    question: 'Poll 2',
-    answers: ['Yes', 'No'],
-    results: [10, 5],
+    question: 'What is your favourite animal',
+    answers: ['Dog', 'Cat', 'Monkey', 'A Winged Rainbow Unicorn'],
+    results: [10, 5, 2, 20],
     voted: [],
     createdBy: 'test',
   });

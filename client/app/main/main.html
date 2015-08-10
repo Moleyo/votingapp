@@ -6,7 +6,7 @@
     <p class="lead">Create and vote on polls! It's questions, with answers, and charts!</p>
     <a href="/signup"><button ng-hide="isLoggedIn" type="submit" class="btn btn-success btn-lg">Sign up</button></a>
     <a href="/login"><button ng-hide="isLoggedIn" type="submit" class="btn btn-primary btn-lg">Login</button></a>
-    <a ng-show="isLoggedIn" href='/newpoll'><button type="button" class="btn btn-warning btn-lg">New Poll!</button></a>
+    <a ng-show="isLoggedIn" href='/newpoll'><button type="button" class="btn btn-primary btn-lg">New Poll!</button></a>
     <a href='/allpoll'><button type="button" class="btn btn-success btn-lg">All polls!</button></a>
     <a ng-show="isLoggedIn" href='/mypoll'><button type="button" class="btn btn-danger btn-lg">My polls!</button></a>
   </div>
@@ -29,6 +29,10 @@
       <h2>Drink Coffee?</h2>
       <p>Feel free to have a cheeky cup of coffee whilst you peruse this site.<p>
     </div>      
+  </div>
+  <div class='row'>
+    <h3>To just see one user's polls type in moleyovotingapp.herokuapp.com<strong>/findpoll/username</strong> substituting username for their actual username!</h3>
+    <h3>To go directly to one user's poll navigate your url to moleyovotingapp.herokuapp.com<strong>/findpoll/username/pollname</strong> substituting username and pollname for their actual values!</h3>
   </div>
 </div>
 
